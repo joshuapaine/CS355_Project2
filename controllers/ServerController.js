@@ -101,7 +101,7 @@ class ServerController {
 						installedOn = ?,
 						powerOnAt = ?
 					WHERE id =?`,
-				values: [ser.hostName, ser.L6_DataCenter, serinstalledOn, ser.powerOnAt, ctx.params.server]
+				values: [ser.hostName, ser.L6_DataCenter, ser.installedOn, ser.powerOnAt, ctx.params.server]
 			}, (err, res) => {
 				if(err) {
 					reject(err);

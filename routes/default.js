@@ -14,6 +14,6 @@ defaultRouter.use(
     serverRouter.routes()
 );
 
-module.exports = api => {
+module.export r api => {
     api.use(defaultRouter.routes());
 };
