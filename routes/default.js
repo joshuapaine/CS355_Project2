@@ -1,5 +1,10 @@
 const dataCenterRouter = require('./datacenter');
 const serverRouter = require('./server');
+const ManufacturerRouter = require('./Manufacturer');
+const StockItemRouter = require('./StockItem');
+const DistributorRouter = require('./Distributor');
+const OrderRouter = require('./Order');
+const BusinessBuyerRouter = require('./BusinessBuyer');
 const defaultRouter = require('koa-router')({
     prefix: '/api'
 });
@@ -11,9 +16,15 @@ defaultRouter.get('/', ctx => {
 
 defaultRouter.use(
     dataCenterRouter.routes(),
-    serverRouter.routes()
+    serverRouter.routes(),
+    ManufacturerRouter.routes(),
+    StockItemRouter.routes(),
+    DistributorRouter.routes(),
+    OrderRouter.routes(),
+    BusinessBuyerRouter.routes(),
 );
 
-module.export r api => {
+module.export = api => {
     api.use(defaultRouter.routes());
 };
+

@@ -4,9 +4,9 @@ const serverRouter = require('koa-router')({
 });
 
 serverRouter.get('/', ServerController.Servers);
-serverRouter.get('/:server', ServerController.Server);
+serverRouter.get('/:Server', ServerController.Server);
 serverRouter.post('/', ServerController.addServer, ServerController.Servers);
-serverRouter.put('/:server', ServerController.updateServer, ServerController.Server);
-serverRouter.delete('/:server', ServerController.deleteServer, ServerController.Servers);
+serverRouter.put('/:Server', ServerController.updateServer, ServerController.Server);
+serverRouter.delete('/:Server', ServerController.deleteServer, ServerController.Servers);
 
 module.exports = serverRouter;
