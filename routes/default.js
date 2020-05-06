@@ -5,6 +5,7 @@ const StockItemRouter = require('./StockItem');
 const DistributorRouter = require('./Distributor');
 const OrderRouter = require('./Order');
 const BusinessBuyerRouter = require('./BusinessBuyer');
+const ViewRouter = require('./View');
 const defaultRouter = require('koa-router')({
     prefix: '/api'
 });
@@ -22,9 +23,10 @@ defaultRouter.use(
     DistributorRouter.routes(),
     OrderRouter.routes(),
     BusinessBuyerRouter.routes(),
+    ViewRouter.routes()
 );
 
-module.export = api => {
+module.exports = api => {
     api.use(defaultRouter.routes());
 };
 
