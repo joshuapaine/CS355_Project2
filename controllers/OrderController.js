@@ -63,6 +63,7 @@ class OrderController {
         console.log('Controller HIT: OrderController::addOrder');
        return new Promise((resolve, reject) => {
            const newORD = ctx.request.body;
+	       console.log(newORD);
            chpConnection.query({
                sql: 'INSERT INTO `Order`(id, Distributor, Buyer, FName, LName) VALUES (?, ?, ?, ?,?);',
                values: [newORD.id, newORD.Distributor, newORD.Buyer, newORD.FName, newORD.LName]

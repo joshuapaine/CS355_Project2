@@ -65,7 +65,7 @@ class DistributorController {
            const newDIS = ctx.request.body;
            chpConnection.query({
                sql: 'INSERT INTO Distributor(id, Name, PhoneNumber) VALUES (?, ?, ?);',
-               values: [newDIS.id, newDIS.Name, newMAN.PhoneNumber]
+               values: [newDIS.id, newDIS.Name, newDIS.PhoneNumber]
            }, (err, res) => {
                if(err) {
                    reject(err);

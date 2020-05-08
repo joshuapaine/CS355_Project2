@@ -63,9 +63,10 @@ class StockItemController {
         console.log('Controller HIT: StockItemController::addStockItem');
        return new Promise((resolve, reject) => {
            const newSTK = ctx.request.body;
+	       console.log(newSTK);
            chpConnection.query({
                sql: 'INSERT INTO StockItem(id, Name, Cost$, List$) VALUES (?, ?, ?, ?);',
-               values: [newSTK.id, newMAN.Name, newMAN.Cost$, newMAN.List$]
+               values: [newSTK.id, newSTK.Name, newSTK.Cost$, newSTK.List$]
            }, (err, res) => {
                if(err) {
                    reject(err);

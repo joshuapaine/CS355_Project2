@@ -28,7 +28,7 @@ class ViewController {
             ctx.body = err;
         });
     }
-
+}
   
 
 module.exports = ViewController;
