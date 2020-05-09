@@ -98,7 +98,7 @@ class DistributorController {
                         PhoneNumber = ?
 			WHERE id = ?
                     `,
-                values: [DIS.Name, DIS.PhoneNumber, ctx.params.StockItem]
+                values: [DIS.Name, DIS.PhoneNumber, ctx.params.Distributor]
             }, (err, res) => {
                 if(err) {
                     reject(err);

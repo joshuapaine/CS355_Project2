@@ -63,6 +63,7 @@ class BusinessBuyerController {
         console.log('Controller HIT: BusinessBuyerController::addBusinessBuyer');
        return new Promise((resolve, reject) => {
            const newBBY = ctx.request.body;
+	       console.log(newBBY);
            chpConnection.query({
                sql: 'INSERT INTO BusinessBuyer(id, Name, PhoneNumber, Street, City, State, ZipCode) VALUES (?, ?, ?, ?, ?, ?, ?);',
                values: [newBBY.id, newBBY.Name, newBBY.PhoneNumber, newBBY.Street, newBBY.City, newBBY.State, newBBY.ZipCode]
@@ -90,6 +91,7 @@ class BusinessBuyerController {
         console.log('Controller HIT: BusinessBuyerController::updateBusinessBuyer');
         return new Promise((resolve, reject) => {
             const BBY = ctx.request.body;
+		console.log(BBY);
             chpConnection.query({
                 sql: `
                     UPDATE BusinessBuyer

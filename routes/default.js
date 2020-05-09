@@ -1,5 +1,3 @@
-const dataCenterRouter = require('./datacenter');
-const serverRouter = require('./server');
 const ManufacturerRouter = require('./Manufacturer');
 const StockItemRouter = require('./StockItem');
 const DistributorRouter = require('./Distributor');
@@ -16,8 +14,6 @@ defaultRouter.get('/', ctx => {
 });
 
 defaultRouter.use(
-    dataCenterRouter.routes(),
-    serverRouter.routes(),
     ManufacturerRouter.routes(),
     StockItemRouter.routes(),
     DistributorRouter.routes(),
